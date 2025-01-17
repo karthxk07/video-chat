@@ -1,0 +1,18 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #19191a;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #8bd6e4;
+  }
+  button {
+    background-color: #072c44;
+  }
+}
