@@ -10,8 +10,9 @@ function App() {
   };
 
   // States
-  const socket: Socket = io("ws://192.168.1.34:3000");
+  const socket: Socket = io("https://video-chat-98k5.onrender.com");
   const peerConnection = new RTCPeerConnection(configuration);
+  Event;
   // Effects
 
   socket.on("offer", async (message: any) => {
