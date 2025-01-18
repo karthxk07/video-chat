@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { MouseEvent, useRef } from "react";
 import "./App.css";
 import { io, Socket } from "socket.io-client";
 
@@ -41,7 +41,7 @@ function App() {
     }
   });
 
-  peerConnection.addEventListener("connectionstatechange", (event) => {
+  peerConnection.addEventListener("connectionstatechange", () => {
     if (peerConnection.connectionState === "connected") {
       // Peers connected!
       console.log("COnnected");
