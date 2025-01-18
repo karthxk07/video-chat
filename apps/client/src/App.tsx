@@ -10,7 +10,7 @@ function App() {
   };
 
   // States
-  const socket: Socket = io("ws://localhost:3000");
+  const socket: Socket = io("ws://192.168.1.34:3000");
   const peerConnection = new RTCPeerConnection(configuration);
   // Effects
 
