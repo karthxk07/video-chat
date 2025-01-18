@@ -79,15 +79,15 @@ function App() {
       console.log("Added local track", track);
       peerConnection.addTrack(track, stream);
     });
-    console.log(peerConnection);
   };
+
+  setLocalStream();
 
   // Event Handlers
   const joinHandler = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     // update the socket and sent a join event
     socket.emit("join", { roomId: "123" });
-    setLocalStream();
 
     // create a peer and set Local Desriptino
     const offer = await peerConnection?.createOffer({
