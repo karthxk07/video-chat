@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useRef, useState } from "react";
-import { redirect } from "react-router";
+import { useNavigate } from "react-router";
 
 function App() {
   const [roomId, setRoomId] = useState<string | undefined>(undefined);
   const roomIdInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   return (
     // Configuration for the stun server
