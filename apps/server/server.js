@@ -26,7 +26,6 @@ io.on("connection", (socket) => {
     console.log(rooms);
   });
   socket.on("offer", (offer) => {
-    console.log("Received offer", offer);
     socket.to(roomId).emit("offer", offer);
   });
   socket.on("answer", (answer) => {
@@ -40,7 +39,7 @@ io.on("connection", (socket) => {
     if (rooms[roomId]) {
       if (rooms[roomId].includes(socket.id)) {
         rooms[roomId] = rooms[roomId].filter((user) => user != socket.id);
-        console.log(`User ${socket.id} removed from room ${roomId}`);
+        if (rooms[roomId].length <= 0) delete rooms[roomId];
       } else {
         console.log(`User ${socket.id} not found in any room`);
       }
